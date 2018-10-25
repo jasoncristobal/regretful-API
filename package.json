@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "start": "node server.js",
+        "test": "mocha --exit"
+    },
+    "dependencies": {
+        "chai": "^4.2.0",
+        "chai-http": "^4.2.0",
+        "cors": "^2.8.4",
+        "express": "^4.16.4"
+    }
+}
