@@ -66,8 +66,7 @@ router.get('/discussed', (req, res) => {
 router.get('/:id', (req, res) => {
   Mistake
     .findOne({
-      _id: req.params.id,
-      user: req.user.id
+      _id: req.params.id
     })
     .then(mistake => {
       res.json({
@@ -135,7 +134,10 @@ router.post('/comment/:id', (req, res) => {
       {
         $push: {
           comments:
-            { comments: req.body.comments }
+          {
+            comment: req.body.comments,
+            date: new Date()
+          }
         }
       })
     .then(mistake => res.status(201).json(
@@ -147,6 +149,7 @@ router.post('/comment/:id', (req, res) => {
     });
 });
 
+// Update/edit item
 router.put('/:id', (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
@@ -180,7 +183,7 @@ router.put('/:id', (req, res) => {
     .catch(err => res.status(500).json({ message: err }));
 });
 
-
+// Delete item
 router.delete('/:id', (req, res) => {
   console.log(`check if ID exists` + req.params.id)
   Mistake
@@ -194,5 +197,20 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// Delete comment
+router.delete('/comment/:id/:commentID', (req, res) => {
+  console.log(`check if ID exists` + req.params.id)
+  Mistake
+    .findOne({
+      _id: req.params.id,
+      user: req.user.id
+    })
+    .then((mistake) => {
+      mistake.comments = mistake.comments.filter((comment)=> comment._id != req.params.commentID);
+      mistake.save();
+      console.log(`Deleted comment on id \`${req.params.id}\``);
+      res.status(204).end();
+    });
+});
 
 module.exports = { router };

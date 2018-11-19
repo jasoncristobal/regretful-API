@@ -30,7 +30,7 @@ const MistakeSchema = mongoose.Schema({
     required: true
   },
   comments: [{
-    body: String,
+    comment: String,
     date: Date
     }],
   commentsLength: {
