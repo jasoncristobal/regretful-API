@@ -1,0 +1,9 @@
+language: node_js
+node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Yd8iG9aNhqx9/9xOPEIQbSZ70CR0VvOJyFRlzy7MdxSMJh/FOHa8ufRx8q/truOCNGAmPiUChAE6F+86C8KH1Nc/jYcaQyvV/CMbV6edBcUzIBC+uXQRf/8LGUZdhvlxBYo9T0a7EY/nyZuGIrz6OilnzcOKzyGjH56yUEwihfgFSzsICUz63VaDwPUXySmxSmNUcQRBWDrGrSKb+ViQEK7eXucLJRzA7OF9u+LJKRzHz5WyHfu/pme8etWvz5EaVrHN0sNFwht/iFJFqhGVy3z8PAFwTMIz49OX8zfjgokGmq6rnvQYoN/4EoHmqkAkr8C9e/AShHTo9JLKJKMyHGH2Xlrw0JCVZ6u3F31CdBodEXdCI7fUlFEuST7uQNCkslzCvD1nyffd0sBh3/wUB7w1ZUoYMc71/dsw/RDU12FN0hX84XzOqlhNt7AMAh+9Le2KPVApv7bo2R9sXbIzerKVATYds5EcyrAEHfTpA5bJxSoki3R/AOa+qknaeHt6YYzf64J4QSv/evwoh6k7KB3FHprmI/SV69cI0n9jXt9NMUMsDIp1YWw4Y4cqrBG/sH5IVuehZVgUsZz8HdwhsApwDKVbOtFAeFRAH9Nq8EigoTDHVp46x7SXbAbDz6Z5nAFWnMdeqjclIzQ0ct9OlKqArD36L1bzwDt2glGvdng=
+  app: regretful-api
+  on:
+    repo: jasoncristobal/regretful-api
