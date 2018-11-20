@@ -48,10 +48,10 @@ router.get('/recent', (req, res) => {
 
 // Get everyone's items and sort by most comments
 router.get('/discussed', (req, res) => {
-  console.log(req.user)
   Mistake
     .find().sort({ commentsLength: -1 })
     .then(mistakes => {
+      console.log(mistakes.length)
       res.json(mistakes.map(mistake => {
         return mistake.serialize();
       }));
