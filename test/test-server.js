@@ -8,12 +8,19 @@ chai.use(chaiHttp);
 
 describe('API', function () {
 
-    it('should 200 on GET requests', function () {
+    it('should 404 on GET requests', function () {
         return chai.request(app)
-            .get('/api/fooooo')
+            .get('/')
             .then(function (res) {
-                res.should.have.status(200);
-                res.should.be.json;
+                res.should.have.status(404);
             });
     });
+    it('should 404 on POST requests', function () {
+        return chai.request(app)
+            .post('/')
+            .then(function (res) {
+                res.should.have.status(404);
+            });
+    });
+
 });

@@ -7,3 +7,4 @@ deploy:
   app: regretful-api
   on:
     repo: jasoncristobal/regretful-api
+services: mongodb

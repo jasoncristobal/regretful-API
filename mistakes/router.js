@@ -32,7 +32,6 @@ router.get('/', (req, res) => {
 
 // Get everyone's items and sort by newest to oldest
 router.get('/recent', (req, res) => {
-  console.log(req.user)
   Mistake
     .find().sort({ date: -1 })
     .then(mistakes => {
@@ -46,12 +45,11 @@ router.get('/recent', (req, res) => {
     });
 });
 
-// Get everyone's items and sort by most comments
-router.get('/discussed', (req, res) => {
+// Get everyone's items and sort by title
+router.get('/titles', (req, res) => {
   Mistake
-    .find().sort({ commentsLength: -1 })
+    .find().sort({ title: 1 })
     .then(mistakes => {
-      console.log(mistakes.length)
       res.json(mistakes.map(mistake => {
         return mistake.serialize();
       }));
