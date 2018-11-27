@@ -10,19 +10,19 @@ This is the API repo for Regretful, which is an app that allows you to keep trac
 
 Home - Desktop
 
-![Home desktop](screenshots/Desktop-1.jpg "Home desktop")
+![Home desktop](https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/screenshots/Desktop-1.jpg "Home desktop")
 
 Dashboard - Desktop
 
-![Dashboard desktop](screenshots/Desktop-2.jpg "Dashboard desktop")
+![Dashboard desktop](https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/screenshots/Desktop-2.jpg "Dashboard desktop")
 
 Dashboard - Mobile
 
-![Dashboard mobile](screenshots/Mobile-1.png "Dashboard mobile")
+![Dashboard mobile](https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/screenshots/Mobile-1.png "Dashboard mobile")
 
 Mistake View - Mobile
 
-![Mistake view mobile](screenshots/Mobile-2.png "Mistake view mobile")
+![Mistake view mobile](https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/screenshots/Mobile-2.png "Mistake view mobile")
 
 ## Live Demo
 [Link to Demo](http://regretful-client.herokuapp.com)
