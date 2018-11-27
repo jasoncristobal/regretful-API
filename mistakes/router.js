@@ -14,7 +14,6 @@ router.use(jwtAuth);
 
 // Get all my items
 router.get('/', (req, res) => {
-  console.log(req.user)
   Mistake
     .find({
       user: req.user.id
@@ -86,7 +85,6 @@ router.get('/:id', (req, res) => {
 
 // Post new item
 router.post('/', (req, res) => {
-  console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`);
   const requiredFields = ['title', 'description', 'question1', 'question2', 'question3'];
   requiredFields.forEach(field => {
     if (!(field in req.body.newMistake)) {
@@ -116,7 +114,6 @@ router.post('/', (req, res) => {
 
 // Post new comment
 router.post('/comment/:id', (req, res) => {
-  console.log(req.body);
   const requiredFields = ['comments'];
   requiredFields.forEach(field => {
     if (!(field in req.body)) {
@@ -183,21 +180,18 @@ router.put('/:id', (req, res) => {
 
 // Delete item
 router.delete('/:id', (req, res) => {
-  console.log(`check if ID exists` + req.params.id)
   Mistake
     .findOneAndRemove({
       _id: req.params.id,
       user: req.user.id
     })
     .then(() => {
-      console.log(`Deleted mistake with id \`${req.params.id}\``);
       res.status(204).end();
     });
 });
 
 // Delete comment
 router.delete('/comment/:id/:commentID', (req, res) => {
-  console.log(`check if ID exists` + req.params.id)
   Mistake
     .findOne({
       _id: req.params.id,
@@ -206,7 +200,6 @@ router.delete('/comment/:id/:commentID', (req, res) => {
     .then((mistake) => {
       mistake.comments = mistake.comments.filter((comment)=> comment._id != req.params.commentID);
       mistake.save();
-      console.log(`Deleted comment on id \`${req.params.id}\``);
       res.status(204).end();
     });
 });
